@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <!-- incorporate react library -->
+  <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    .heading {
+      color: pink;
+    }
+  </style>
+</head>
+<body>
+  <!--
+  FROM CHAPTERS 1 & 2
+  -->
+  <div id="root"></div>
+  <script type="text/babel">
+
+    // const Hello = () =>
+    //   <div className="heading">
+    //     <h1>Welcome to React</h1>
+    //   </div>
+
+    const Hello = ({library, message}) => {
+      return (
+        <div className="heading">
+          <h1>Welcome to {library}</h1>
+          <p>{message}</p>
+        </div>
+      )
+    };
+    //Note: React component must start with an uppercase letter
+    //Note: Props provide data to a component to be displayed
+
+    ReactDOM.render(
+      <Hello library="React" message="Enjoy!"/>,
+      document.getElementById("root")
+    );
+  </script>
+
+
+
+
+  <!-- <script type="text/javascript">
+    ReactDOM.render(
+      //H1 TAG EXAMPLE:
+      //React.createElement("h1", null, "Hello World"),
+
+      //H1 TAG WITH STYLE EXAMPLE:
+      React.createElement(
+        "h1",
+        {"style": {"color": "red"}},
+        "Hello World"
+      ),
+
+    //NESTING EXAMPLE:
+    React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "h1",
+        null,
+        "Oh, hello!"
+      )
+    ),
+    document.getElementById("root")
+  );
+  </script> -->
+</body>
+</html>
